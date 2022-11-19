@@ -1,17 +1,16 @@
-# team_project
+# Kilburn Magic Playlist
 
 ## Clone code
 
 ```bash
 # Clone projects
-$ git clone https://gitlab.cs.man.ac.uk/z11/team_project.git
-$ git clone https://gitlab.cs.man.ac.uk/z11/backend.git
+$ git clone https://github.com/guanyusoh/kilburn-magic-playlist.git
 ```
 
 ## Build setup of frontend
 
 ```bash
-$ cd team_project
+$ cd kilburn-magic-playlist
 
 # install dependencies
 $ npm install
@@ -21,7 +20,3 @@ $ npm run dev
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-## Publish
-
-Once you merged some commits to `master`, the CI will start automatically. Make sure all jobs are `passed`, and the website will be up-to-date automatically.
