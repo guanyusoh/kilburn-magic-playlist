@@ -1,0 +1,23 @@
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+test:
+  stage: test
+  only:
+    - master
+  script:
+    - npm run lint:js
+
+publish:
+  stage: deploy
+  only:
+    - master
+  except:
+    - merge_requests
+  script:
+    - npm run generate
+    - mv /www/wwwroot/kmp.yrc.me/.well-known /www/wwwroot/.well-known && mv /www/wwwroot/kmp.yrc.me/api /team_project/api && rm -rf /www/wwwroot/kmp.yrc.me && mkdir /www/wwwroot/kmp.yrc.me && cp -r dist/* /www/wwwroot/kmp.yrc.me && mv /www/wwwroot/.well-known /www/wwwroot/kmp.yrc.me/.well-known && cp /www/wwwroot/template.user.ini /www/wwwroot/kmp.yrc.me/.user.ini && mv /team_project/api /www/wwwroot/kmp.yrc.me/api && rm -rf /team_project/api
